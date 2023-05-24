@@ -6,7 +6,6 @@ from config import BasicConfig
 from flask_cors import CORS
 from routes.user.user import appuser
 from routes.images.images import imageUser
-from routes.pdf.pdf import apppdf
 from routes.csv.csv import appcsv
 from routes.donante.donante import appdonante
 from models import Usuario
@@ -16,7 +15,6 @@ app = Flask(__name__)
 
 app.register_blueprint(appuser)
 app.register_blueprint(imageUser)
-app.register_blueprint(apppdf)
 app.register_blueprint(appcsv)
 app.register_blueprint(appdonante)
 app.config.from_object(BasicConfig)
