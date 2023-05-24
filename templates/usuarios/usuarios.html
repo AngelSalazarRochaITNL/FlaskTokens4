@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{%block title%}
+Usuarios
+{%endblock%}
+
+{%block content%}
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>email</th>
+                <th>password</th>
+                <th>registrado</th>
+                <th>admin</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{usuario.id}}</td>
+                    <td>{{usuario.email}}</td>
+                    <td>{{usuario.password}}</td>
+                    <td>{{usuario.registrado}}</td>
+                    <td>{{usuario.admin}}</td>
+                    <td><a href="editarP/{{usuario.id}}">Editar</a></td>
+                    <td><a href="eliminarP/{{usuario.id}}">Eliminar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{%endblock%}

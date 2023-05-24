@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Login</h1>
+    
+    <form id="login-form">
+        <div class="mt-3">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+        </div>
+        
+        <div class="mt-3">
+            <label for="password">Password</label>
+            <input type="password" id="password"name="password">
+        </div>
+        
+        <button type="submit" id="login-btn">Login</button>
+    </form>
+
+    <div class="justify-content-center row">
+        <a href="{{url_for('registrar')}}">Registrarse</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/login/login.js') }}"></script>
+</body>
+</html>
