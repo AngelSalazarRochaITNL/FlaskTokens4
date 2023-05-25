@@ -37,10 +37,13 @@ def index():
     return redirect(url_for('login_post'))
 
 
-@app.route('/main')
+@app.route('/main/admin')
 def main():
-    return render_template('main/main.html')
+    return render_template('main/main_admin.html')
 
+@app.route('/main/user')
+def main_user():
+    return render_template('main/main_user.html')
 
 @app.route('/signin',methods=["GET","POST"])
 def registrar():
@@ -83,10 +86,14 @@ def registrar():
 
 @app.route('/login/user',methods=["GET","POST"])
 def login_post():
+    if request.method == "GET":
+        uvacios = Usuario.query.first()
+        if uvacios:
+            return redirect(url_for('index'))
     return render_template("main/login.html")
 
 
 @app.route('/logout')
 def logout():
-    return render_template("")
+    return render_template("main/logout.html")
 

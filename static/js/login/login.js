@@ -20,9 +20,19 @@ loginButton.addEventListener('click',(e)=>{
     .then(data=>{
         if(data.auth_token != undefined) {
             alert('Inicio exitoso!');
+
             console.log(data.auth_token);
             localStorage.setItem('token',data.auth_token);
-            window.location.href='/main';
+
+            console.log(data.admin);
+            localStorage.setItem('admin',data.admin);
+
+            if(data.admin) {
+                window.location.href='/main/admin';
+            }
+            else {
+                window.location.href='/main/user';
+            }
         }
         else {}
     })

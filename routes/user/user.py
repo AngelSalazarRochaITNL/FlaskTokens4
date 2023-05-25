@@ -35,7 +35,8 @@ def login():
             responseObject = {
                 'status':'success',
                 'message':'Loggin exitoso',
-                'auth_token':auth_token
+                'auth_token':auth_token,
+                'admin':searchUser.admin
             }
             return jsonify(responseObject)
     return jsonify({'message':'Datos incorrectos'})
