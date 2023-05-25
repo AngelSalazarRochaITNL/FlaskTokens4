@@ -31,6 +31,9 @@ migrate.init_app(app,db)
 
 @app.route('/')
 def index():
+    uvacios = Usuario.query.first()
+    if uvacios is None:
+        return render_template('control_admin/control_admin.html')
     return redirect(url_for('login_post'))
 
 
@@ -44,10 +47,18 @@ def registrar():
     if request.method=="GET":
         return render_template('main/registrar.html')
     else:
+
+        # Condición para el primer usuario administrador
+        uvacios = Usuario.query.first()
+        admin = False
+        if uvacios is None:
+            admin = True
+
         email = request.json["email"]
         password=request.json["password"]
         nombre=request.json["nombre"]
-        usuario = Usuario(email=email,password=password,nombre=nombre)
+        administrador = admin
+        usuario = Usuario(email=email,password=password,nombre=nombre, admin=administrador)
         userExists=Usuario.query.filter_by(email=email).first()
         if not userExists:
             try:   

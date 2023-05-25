@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/home_styles.css')}}">
     
     <script src="https://kit.fontawesome.com/41bcea2ae3.js"></script>
+    
 </head>
 <body id="body">
 
@@ -17,14 +18,14 @@
     <div id="main-app" class="main-wrapper">
         <nav class="navbar navbar-light bg-light">
             
-            <header class="col-md-2 col-4 row">
-                <div class="icon__menu">
+            <header>
+                <div class="d-flex justify-content-left ml-3 pl-2">
                     <i class="fas fa-bars" id="btn_open"></i>
                 </div>
             </header>
 
-            <div class="d-flex">
-                <h2 class="justify-content-center">Pets cloud</h4>
+            <div class="d-flex justify-content-center container col-10">
+                <h2>Pets cloud</h4>
             </div>
         </nav>
     </div>
@@ -33,8 +34,8 @@
     <div class="menu__side" id="menu_side">
         <!-- Titulo de menu principal -->
         <div class="name__page">
-            <a href="#">
-                <i class="fas fa-home " title="Inicio"></i>
+            <a href="">
+                <i class="fas fa-house" title="Inicio"></i>
             </a>
             <a href="#">
                 <h4 class="">Pets Cloud</h4>
@@ -44,36 +45,36 @@
         <!-- Opciones de menu -->
         <div class="options__menu container-fluid">
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="#"><!--  selected -->
+                <a class="btn btn-light form-control col-sm-12" href="Perfil">
                     <div class="option">
-                        <i class="fa-solid fa-reply" title="Inicio"></i>
+                        <i class="fa-solid fa-user-pen" title="Perfil"></i>
                         Perfil
                     </div>
                 </a>
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="">    
+                <a class="btn btn-light form-control col-sm-12" href="Donar">    
                     <div class="option">
-                        <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
-                        Donar
+                        <i class="fa-solid fa-donate"></i>
+                            Donar
                     </div>
                 </a>
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="">    
+                <a class="btn btn-light form-control col-sm-12" href="Mis Donaciones">    
                     <div class="option">
-                        <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
+                        <i class="fa-solid fa-money-bill-transfer" title="Mis Donaciones"></i>
                         Mis Donaciones
                     </div>
                 </a>
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="">    
+                <a class="btn btn-light form-control col-sm-12" href="Logout">    
                     <div class="option">
-                        <i class="fa-solid fa-users" title="Evaluacion de empleados"></i>
+                        <i class="fa-solid fa-right-from-bracket" title="Logout"></i>
                         Logout
                     </div>
                 </a>
