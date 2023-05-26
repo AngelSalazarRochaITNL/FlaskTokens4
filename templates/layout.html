@@ -45,7 +45,7 @@
         <!-- Opciones de menu -->
         <div class="options__menu container-fluid">
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="Perfil">
+                <a class="btn btn-light form-control col-sm-12" href="{{ url_for('perfil') }}">
                     <div class="option">
                         <i class="fa-solid fa-user-pen" title="Perfil"></i>
                         Perfil
@@ -54,16 +54,16 @@
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="Donar">    
+                <a class="btn btn-light form-control col-sm-12" href="{{ url_for('donar') }}">    
                     <div class="option">
-                        <i class="fa-solid fa-donate"></i>
-                            Donar
+                        <i class="fa-solid fa-donate" title="Donar"></i>
+                        Donar
                     </div>
                 </a>
             </div>
 
             <div class="form-group row">
-                <a class="btn btn-light form-control col-sm-12" href="Mis Donaciones">    
+                <a class="btn btn-light form-control col-sm-12" href="{{ url_for('donaciones') }}">    
                     <div class="option">
                         <i class="fa-solid fa-money-bill-transfer" title="Mis Donaciones"></i>
                         Mis Donaciones

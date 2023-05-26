@@ -42,6 +42,7 @@ def login():
     return jsonify({'message':'Datos incorrectos'})
 
 
+
 # @appuser.route('/registro',methods=["POST"])
 # def registro():
 #     user = request.get_json()

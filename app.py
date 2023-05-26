@@ -28,7 +28,7 @@ migrate = Migrate()
 migrate.init_app(app,db)
 
 
-
+# End points de login y filtro por admin/user
 @app.route('/')
 def index():
     uvacios = Usuario.query.first()
@@ -36,17 +36,21 @@ def index():
         return render_template('control_admin/control_admin.html')
     return redirect(url_for('login_post'))
 
+
 @app.route('/login/user',methods=["GET","POST"])
 def login_post():
     return render_template("main/login.html")
+
 
 @app.route('/main/admin')
 def main():
     return render_template('main/main_admin.html')
 
+
 @app.route('/main/user')
 def main_user():
     return render_template('main/main_user.html')
+
 
 @app.route('/signin',methods=["GET","POST"])
 def registrar():
@@ -88,7 +92,20 @@ def registrar():
 
 
 
+
+# Endpoints de menu de layout
+@app.route('/perfil', methods=['GET'])
+def perfil():
+    return render_template('usuarios/peril.html')
+
+@app.route('/donar', methods=['GET'])
+def donar():
+    return render_template('usuarios/donar.html')
+
+@app.route('/donaciones', methods=['GET'])
+def donaciones():
+    return render_template('usuarios/donaciones.html')
+
 @app.route('/logout')
 def logout():
     return render_template("main/logout.html")
-
