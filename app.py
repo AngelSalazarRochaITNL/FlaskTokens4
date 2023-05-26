@@ -36,6 +36,9 @@ def index():
         return render_template('control_admin/control_admin.html')
     return redirect(url_for('login_post'))
 
+@app.route('/login/user',methods=["GET","POST"])
+def login_post():
+    return render_template("main/login.html")
 
 @app.route('/main/admin')
 def main():
@@ -83,14 +86,6 @@ def registrar():
             }
         return jsonify(responseObject)
 
-
-@app.route('/login/user',methods=["GET","POST"])
-def login_post():
-    if request.method == "GET":
-        uvacios = Usuario.query.first()
-        if uvacios:
-            return redirect(url_for('index'))
-    return render_template("main/login.html")
 
 
 @app.route('/logout')
