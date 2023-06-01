@@ -8,6 +8,7 @@ from routes.user.user import appuser
 from routes.images.images import imageUser
 from routes.csv.csv import appcsv
 from routes.donante.donante import appdonante
+from routes.pdf.pdf import apppdf
 from models import Usuario
 from forms import UserForm
 from auth import verificarToken
@@ -17,6 +18,7 @@ app = Flask(__name__)
 
 app.register_blueprint(appuser)
 app.register_blueprint(imageUser)
+app.register_blueprint(apppdf)
 app.register_blueprint(appcsv)
 app.register_blueprint(appdonante)
 app.config.from_object(BasicConfig)
