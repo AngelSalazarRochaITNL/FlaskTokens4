@@ -5,6 +5,7 @@ from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate,Table,TableStyle,Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.enums import TA_CENTER
+from auth import tokenCheck
 
 apppdf = Blueprint('apppdf',__name__,template_folder="templates")
 
@@ -46,6 +47,7 @@ def generatePdf():
     return response
 
 
-@apppdf.route('/donaciones')
-def donaciones():
-    return render_template('indexPdf.html')
+@apppdf.route('/misdonaciones')
+@tokenCheck
+def misdonaciones():
+    return render_template('usuarios/indexPdf.html')

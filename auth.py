@@ -30,7 +30,7 @@ def tokenCheck(f):
         token = None
         if 'token' in request.headers:
             token = request.headers['token']
-        if not token:  
+        if not token:
             return jsonify({'message':'token no encontrado'})
         try:
             info= obtenerInfo(token)

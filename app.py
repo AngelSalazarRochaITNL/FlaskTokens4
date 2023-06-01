@@ -11,7 +11,7 @@ from routes.donante.donante import appdonante
 from routes.pdf.pdf import apppdf
 from models import Usuario
 from forms import UserForm
-from auth import verificarToken
+from auth import tokenCheck
 # import logging
 
 app = Flask(__name__)
@@ -54,7 +54,7 @@ def main():
 
 @app.route('/main/user')
 def main_user():
-    return render_template('main/main_user.html')
+    return render_template('main2/main_user.html')
 
 
 @app.route('/signin',methods=["GET","POST"])
@@ -106,6 +106,10 @@ def perfil():
 def donar():
     return render_template('usuarios/donar.html')
 
+@app.route('/donar2', methods=['GET'])
+def donar2():
+    return render_template('usuarios2/donar.html')
+
 @app.route('/misdonaciones', methods=['GET'])
 def misdonaciones():
     return render_template('usuarios/misdonaciones.php')
@@ -127,3 +131,9 @@ def editarUsuario(ID):
             db.session.commit()
             return redirect(url_for('appuser.verUsuarios'))
     return render_template('usuarios/perfil.html', forma=userForm)
+
+
+#ERROR 404
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404/404.html"),404
