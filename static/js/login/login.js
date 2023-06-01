@@ -27,6 +27,9 @@ loginButton.addEventListener('click',(e)=>{
             console.log(data.admin);
             localStorage.setItem('admin',data.admin);
 
+            console.log(data.id);
+            localStorage.setItem('id',data.id);
+
             if(data.admin) {
                 window.location.href='/main/admin';
             }
@@ -34,6 +37,5 @@ loginButton.addEventListener('click',(e)=>{
                 window.location.href='/main/user';
             }
         }
-        else {}
     })
 })

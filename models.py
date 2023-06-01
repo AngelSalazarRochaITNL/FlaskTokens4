@@ -65,5 +65,6 @@ class Donante(db.Model):
     __tablename__='donante'
     id_donante = db.Column(db.Integer, primary_key=True)
     monto=db.Column(db.Float, nullable=False)
+    tarjeta=db.Column(db.String(16), nullable=False)
     usuario_id=db.Column(db.Integer,db.ForeignKey('users.id'))
     user_donante = db.relationship('Usuario',backref='userdon')
